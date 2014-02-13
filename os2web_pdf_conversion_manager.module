@@ -59,6 +59,13 @@ function os2web_pdf_conversion_manager_pdf_converter_form_submit(&$form_state, $
     os2web_pdf_conversion_manager_cron();
 }
 
+function os2web_pdf_conversion_manager_cronapi($op, $job = NULL) {
+  switch ($op) {
+    case 'list':
+      return array('os2web_pdf_conversion_manager_cron' => t('Moves converted PDF files into a meeting folder'));
+  }
+}
+
 /**
  * Cron implementation.
  * additionally, there should also be a cron job, which checks the mentioned directory to see if some of the files there have been conveted to pdf.
