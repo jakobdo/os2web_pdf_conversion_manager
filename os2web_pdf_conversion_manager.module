@@ -12,8 +12,8 @@
  * @link     http://bellcom.dk
  */
 
-define('OS2WEB_CONVERTION_DIR','public://os2convert');
-define('OS2WEB_COPIED_FILETYPE','doc,docx,xls,xlsx');
+define('OS2WEB_CONVERTION_DIR','private://os2convert');
+define('OS2WEB_COPIED_FILETYPE','doc,docx,xls,xlsx,ppt,pptx,xlsb,msg,tif,tiff');
 
 function os2web_pdf_conversion_manager_menu() {
     $items = array();
