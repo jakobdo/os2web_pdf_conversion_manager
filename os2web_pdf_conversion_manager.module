@@ -80,7 +80,7 @@ function os2web_pdf_conversion_manager_cronapi($op, $job = NULL) {
 function os2web_pdf_conversion_manager_cron() {
     $convertion_dir_path = drupal_realpath(variable_get('os2web_convertion_dir',OS2WEB_CONVERTION_DIR));
     if (file_exists($convertion_dir_path)===FALSE) {
-       watchdog('file convertion managmnet:', 'Folder %uri is not created', array('%uri' => variable_get('os2web_convertion_dir',OS2WEB_CONVERTION_DIR)), WATCHDOG_WARNING);
+       watchdog('file convertion management:', 'Folder %uri is not created', array('%uri' => variable_get('os2web_convertion_dir',OS2WEB_CONVERTION_DIR)), WATCHDOG_WARNING);
        return;
     }
       _os2web_pdf_conversion_manager_manage_msg($convertion_dir_path);     
@@ -308,7 +308,7 @@ function _os2web_pdf_conversion_manager_update_bpa_file($fid, $original_file, $p
               ', array(':uri' => $uri, ':fid' => $fid))
                 ->fetchField();
         if ($uri_exists) {
-            watchdog('file convertion managmnet:', 'Ignore file %file. Url exists %uri.', array('%file' => $original_path_parts['filename'] . '.pdf', '%uri' => $dest), WATCHDOG_WARNING);
+            watchdog('file convertion management:', 'Ignore file %file. Url exists %uri.', array('%file' => $original_path_parts['filename'] . '.pdf', '%uri' => $dest), WATCHDOG_WARNING);
             return FALSE;
         }
         db_update('file_managed')
